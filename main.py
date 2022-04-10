@@ -25,7 +25,7 @@ def upload_file(file, youtuber, title):
         ftp_client.mkd(youtuber)
         ftp_client.cwd("/media/Youtube/%s" % youtuber)
     with open(file, "rb") as f:
-       ftp_client.storbinary("STOR %s" % title, f)
+       ftp_client.storbinary("STOR %s" % title + ".mp4", f)
 
 def download_video(link):
     url = YouTube(link)
